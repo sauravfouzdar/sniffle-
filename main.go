@@ -1,25 +1,30 @@
 package main
 
-
 import (
-	"net/http"
-
-	"log"
+	"sniffle-/config"
+	"sniffle-/controllers"
+	"sniffle-/middlewares"
 	"github.com/gin-gonic/gin"
-
-	"github.com/sauravfouzdar/sniffle-/api/routes"
-	"github.com/sauravfouzdar/sniffle-/db"
 )
 
 func main() {
-	r := gin.Default()
+    config.InitDatabase()
+    //defer config.DB.Close()
 
-	db.InitDB()
+    r := gin.Default()
 
-	routes.SetupUserRoutes(r)
+    r.POST("/register", controllers.Register)
+    r.POST("/login", controllers.Login)
 
-	if err := r.Run(":8080"); err != nil {
-		log.Fatalf("Failed to run server: %v", err)
-	}
+    auth := r.Group("/auth")
+    auth.Use(middlewares.AuthMiddleware())
+    {
+        auth.GET("/users", controllers.GetUsers)
+        auth.POST("/posts", controllers.CreatePost)
+        auth.GET("/posts", controllers.GetPosts)
+    }
+
+    r.Run(":8080")
 }
+
 
