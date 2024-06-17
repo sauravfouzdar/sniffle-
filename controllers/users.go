@@ -10,6 +10,10 @@ import (
 )
 
 
+func Health(c *gin.Context) {
+	c.JSON(http.StatusOK, gin.H{"data": "pong"})
+}
+
 func GetUsers(c *gin.Context) {
 
 	var users []models.User
@@ -62,6 +66,7 @@ func DeleteUser(c *gin.Context) {
 	config.DB.Delete(&user)
 	c.JSON(http.StatusOK, gin.H{"data": true})
 }
+
 
 
 
