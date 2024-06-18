@@ -45,6 +45,7 @@ func main() {
         auth.GET("/users", controllers.GetUsers)
         auth.POST("/posts", controllers.CreatePost)
         auth.GET("/posts", controllers.GetPosts)
+        auth.GET("/posts/:id", controllers.GetPost)
     }
 
     port := os.Getenv("PORT")
