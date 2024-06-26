@@ -2,20 +2,21 @@ package config
 
 import (
 	"fmt"
-	// "os"
+	"os"
 	"log"
 	"sniffle-/models"
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	//"github.com/joho/godotenv"
 )
 
 var (
-	Host     = "go-postgres.crn397r23dwk.ap-south-1.rds.amazonaws.com"
-	User     = "postgres"
-	Password = "eKLiipmBjXGqRjCNKwnY"
-	Dbname   = "postgres"
-	Port     = "5432"
+	Host     = os.Getenv("DB_HOST")
+	User     = os.Getenv("DB_USER")
+	Password = os.Getenv("DB_PASSWORD")
+	Dbname   = os.Getenv("DB_NAME")
+	Port     = os.Getenv("DB_PORT")
 )
 
 func BuildDSN() string {
