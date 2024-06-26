@@ -1,16 +1,22 @@
 package router
 
-// import (
-// 	"github.com/gin-gonic/gin"
-// 	"sniffle-/controllers"
-// 	"sniffle-/middlewares"
-// )
-
-// func SetupRouter() *gin.Engine {
-// 	r := gin.Default()
+import (
+	"github.com/gin-gonic/gin"
+)
 
 
-// 	return r
-// }
+func SetupRouter() *gin.Engine {
 
-// func SetupRouter() *gin.Engine {
+	r := gin.Default()
+
+	api := r.Group("/api/v1")
+	{
+		
+		RegisterUserRoutes(api)
+		RegisterPostRoutes(api)
+
+	}
+
+	return r
+
+}
