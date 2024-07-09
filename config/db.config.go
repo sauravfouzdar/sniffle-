@@ -8,15 +8,26 @@ import (
 
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
-	//"github.com/joho/godotenv"
+	"github.com/joho/godotenv"
 )
+func goDotEnvVariable(key string) string {
+
+	// load .env file
+	err := godotenv.Load(".env")
+  
+	if err != nil {
+	  log.Fatalf("Error loading .env file")
+	}
+	// println(key, os.Getenv(key))
+	return os.Getenv(key)
+}
 
 var (
-	Host     = os.Getenv("DB_HOST")
-	User     = os.Getenv("DB_USER")
-	Password = os.Getenv("DB_PASSWORD")
-	Dbname   = os.Getenv("DB_NAME")
-	Port     = os.Getenv("DB_PORT")
+	Host     = goDotEnvVariable("DB_HOST")
+	User     = goDotEnvVariable("DB_USERNAME")
+	Password = goDotEnvVariable("DB_PASSWORD")
+	Dbname   = goDotEnvVariable("DB_NAME")
+	Port     = goDotEnvVariable("DB_PORT")
 )
 
 func BuildDSN() string {

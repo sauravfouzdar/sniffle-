@@ -19,6 +19,12 @@ require (
 )
 
 require (
+	github.com/aws/aws-sdk-go v1.54.16 // indirect
+	github.com/aws/aws-sdk-go-v2 v1.30.1 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/configsources v1.3.13 // indirect
+	github.com/aws/aws-sdk-go-v2/internal/endpoints/v2 v2.6.13 // indirect
+	github.com/aws/aws-sdk-go-v2/service/ses v1.25.0 // indirect
+	github.com/aws/smithy-go v1.20.3 // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect
@@ -29,6 +35,7 @@ require (
 	github.com/goccy/go-json v0.10.2 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
+	github.com/jmespath/go-jmespath v0.4.0 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
 	github.com/klauspost/cpuid/v2 v2.2.4 // indirect
 	github.com/kr/text v0.2.0 // indirect

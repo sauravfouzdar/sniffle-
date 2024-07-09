@@ -14,9 +14,11 @@ func RegisterUserRoutes(r *gin.RouterGroup) {
 		userGroup.POST("/register", controllers.Register)
 		userGroup.POST("/login", controllers.Login)
 		userGroup.GET("/health", controllers.Health)
+		userGroup.GET("/test-email", controllers.TestEmail)
 	}
 	userGroup.Use(middlewares.AuthMiddleware())
 	{
 		userGroup.GET("/users", controllers.GetUsers)
 	}
+	
 }

@@ -28,6 +28,9 @@ sniffle
 
 List of available endpoints:
 
+**app health routes**:\
+`GET /health` - Health check endpoint
+`GET /test-email` - Test email endpoint
 
 **user app routes**:\
 `POST /login` - User Login\

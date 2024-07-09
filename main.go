@@ -21,6 +21,7 @@ func main() {
     }
 
     config.InitDatabase()
+    config.InitSES()
 
     r := router.SetupRouter() 
 
