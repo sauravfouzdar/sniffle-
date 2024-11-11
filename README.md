@@ -1,5 +1,5 @@
 # sniffle-
-Boilerplate to quickly build REST API Server in Go using Gin Gonic
+Boilerplate to quickly build REST APIs in Go using Gin Gonic
 
 ## Technology Stack
 
